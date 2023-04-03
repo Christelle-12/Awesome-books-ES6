@@ -1,4 +1,3 @@
-
 import {BookShelf, ShowBooks } from './modules/Showbooks.js';
 
 
@@ -30,14 +29,6 @@ contactLink.addEventListener('click', () => {
   formCon.classList.add('disapear');
   contactCon.classList.remove('disapear');
 });
-
-// class BookShelf {
-//   constructor(title, author) {
-//     this.title = title;
-//     this.author = author;
-//   }
-// }
-
 
 
 addBtn.addEventListener('click', (e) => {

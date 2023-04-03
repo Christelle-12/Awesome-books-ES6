@@ -1,12 +1,14 @@
-export class BookShelf {
+class BookShelf {
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
 }
 let bookArray = [];
+const bookList = document.querySelector('.book-list');
 
-export class ShowBooks {
+
+class ShowBooks {
   static addBooks(title, author) {
     const bookTitle = title;
     const bookAuthor = author;
@@ -17,8 +19,17 @@ export class ShowBooks {
     }
   }
 
+  static remove(selector) {
+    const bookIndex = selector;
+    bookArray.splice(bookIndex, 1);
+    localStorage.setItem('Books', JSON.stringify(bookArray));
+    ShowBooks.showBook();
+  }
+
   static showBook() {
     const books = ShowBooks.checkLocalStorage();
+    const rmv = document.querySelector('.remove');
+    
     let showBook = '';
     books.forEach((book, i) => {
       showBook += `
@@ -28,11 +39,18 @@ export class ShowBooks {
             <p>by</p>
             <p>${book.author}</p>
           </div>
-          <button class="remove" onclick="ShowBooks.remove(${i})">Remove</button>
+          <button class="remove" data-index="${i}">Remove</button>
         </div> 
       `;
     });
     bookList.innerHTML = showBook;
+    const removeButtons = document.querySelectorAll('.remove');
+    removeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const index = button.dataset.index;
+      ShowBooks.remove(index);
+    });
+  });
   }
 
   static checkLocalStorage() {
@@ -44,10 +62,6 @@ export class ShowBooks {
     return bookArray;
   }
  
-  static remove(selector) {
-    const bookIndex = selector;
-    bookArray.splice(bookIndex, 1);
-    localStorage.setItem('Books', JSON.stringify(bookArray));
-    ShowBooks.showBook();
-  }
 }
+
+export { BookShelf, ShowBooks };
