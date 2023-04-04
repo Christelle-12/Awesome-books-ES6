@@ -12,7 +12,6 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -111,10 +110,6 @@ to run tests, run the following command
   <li>npx eslint .</li>
   <li>npx hint .</li>
 </ul>
-
-<!-- ### Deployment
-
-This page has been deployed with gitbub pages. -->
 
 ## 👥 Authors <a name="authors"></a>
 
