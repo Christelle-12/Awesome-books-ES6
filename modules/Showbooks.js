@@ -1,9 +1,5 @@
-class BookShelf {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
+/* eslint-disable */
+import BookShelf from '/modules/bookShelf.js'
 let bookArray = [];
 const bookList = document.querySelector('.book-list');
 
@@ -62,4 +58,4 @@ class ShowBooks {
   }
 }
 
-export { BookShelf, ShowBooks };
+export {  ShowBooks };

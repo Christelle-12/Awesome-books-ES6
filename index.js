@@ -1,4 +1,4 @@
-import { BookShelf, ShowBooks } from './modules/Showbooks.js';
+import { ShowBooks } from './modules/Showbooks.js';
 import showDateTime from './modules/datetime.js';
 
 const titleInput = document.querySelector('.book-title');
