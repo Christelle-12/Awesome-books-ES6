@@ -7,7 +7,6 @@ class BookShelf {
 let bookArray = [];
 const bookList = document.querySelector('.book-list');
 
-
 class ShowBooks {
   static addBooks(title, author) {
     const bookTitle = title;
@@ -29,7 +28,7 @@ class ShowBooks {
   static showBook() {
     const books = ShowBooks.checkLocalStorage();
     const rmv = document.querySelector('.remove');
-    
+
     let showBook = '';
     books.forEach((book, i) => {
       showBook += `
@@ -46,11 +45,11 @@ class ShowBooks {
     bookList.innerHTML = showBook;
     const removeButtons = document.querySelectorAll('.remove');
     removeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const index = button.dataset.index;
-      ShowBooks.remove(index);
+      button.addEventListener('click', () => {
+        const { index } = button.dataset;
+        ShowBooks.remove(index);
+      });
     });
-  });
   }
 
   static checkLocalStorage() {
@@ -61,7 +60,6 @@ class ShowBooks {
     }
     return bookArray;
   }
- 
 }
 
 export { BookShelf, ShowBooks };

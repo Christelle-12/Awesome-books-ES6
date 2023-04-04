@@ -1,5 +1,5 @@
-import {BookShelf, ShowBooks } from './modules/Showbooks.js';
-
+import { BookShelf, ShowBooks } from './modules/Showbooks.js';
+import showDateTime from './modules/datetime.js';
 
 const titleInput = document.querySelector('.book-title');
 const authorInput = document.querySelector('.book-author');
@@ -30,7 +30,6 @@ contactLink.addEventListener('click', () => {
   contactCon.classList.remove('disapear');
 });
 
-
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const title = titleInput.value.trim();
@@ -43,3 +42,4 @@ addBtn.addEventListener('click', (e) => {
 window.addEventListener('DOMContentLoaded', () => {
   ShowBooks.showBook();
 });
+showDateTime();
